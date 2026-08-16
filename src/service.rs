@@ -22,7 +22,7 @@ use super::{
         Authenticator, CollectionInvitationManagerOnline, CollectionListResponse,
         CollectionManagerOnline, CollectionMember, CollectionMemberManagerOnline, FetchOptions,
         ItemListResponse, ItemManagerOnline, IteratorListResponse, LoginBodyResponse,
-        LoginChallange, LoginResponseUser, User, UserProfile,
+        LoginChallenge, LoginResponseUser, User, UserProfile,
     },
     utils::{
         buffer_unpad, from_base64, randombytes_array, to_base64, MsgPackSerilization, StrBase64,
@@ -236,7 +236,7 @@ impl Account {
         mut client: Client,
         username: &str,
         main_key: [u8; SYMMETRIC_KEY_SIZE],
-        login_challenge: LoginChallange,
+        login_challenge: LoginChallenge,
     ) -> Result<Self> {
         let authenticator = Authenticator::new(&client);
 

@@ -20,7 +20,7 @@ In addition to the API documentation, there are docs available at https://docs.e
 # Minimum supported Rust version (MSRV)
 
 The current MSRV is 1.63.0. Changes to the MSRV are not considered breaking and may occur in any patch release, it is however guaranteed that
-at least the previous Rust version will always be supported. This results in a three-month grace period from when a new Rust verion is released
+at least the previous Rust version will always be supported. This results in a three-month grace period from when a new Rust version is released
 until it may become required.
 
 # Build
@@ -32,12 +32,12 @@ $ cargo build
 
 To test, run the `etesync/test-server` image using the latest version, e.g.,
 
-```
+```shell
 docker run -p 3735:3735 -d etesync/test-server:latest
 ```
 
 and then set `ETEBASE_TEST_HOST` to the host:port on which that is running; for the docker invocation above, that's
-```
+```shell
 export ETEBASE_TEST_HOST=localhost:3735
 ```
 

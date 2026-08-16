@@ -12,7 +12,7 @@ pub type Result<T> = std::result::Result<T, Error>;
 pub enum Error {
     /// A generic error
     Generic(String),
-    /// An error with parsing the a URL (e.g. from the server URL)
+    /// An error with parsing the URL (e.g. from the server URL)
     UrlParse(String),
     /// An error related to msgpack serialization and de-serialization
     MsgPack(String),

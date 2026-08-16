@@ -28,7 +28,7 @@ impl Response {
     /// Creates a new valid response object
     ///
     /// # Arguments:
-    /// * `bytes` - the raw resposne body
+    /// * `bytes` - the raw response body
     /// * `status` - the response status code
     pub fn new(bytes: Vec<u8>, status: u16) -> Self {
         Self {
@@ -53,7 +53,7 @@ impl Response {
     /// Reset the response object to a valid state as if it was created with [`new`](Self::new)
     ///
     /// # Arguments:
-    /// * `bytes` - the raw resposne body
+    /// * `bytes` - the raw response body
     /// * `status` - the response status code
     pub fn reset_ok(&mut self, bytes: Vec<u8>, status: u16) {
         self.bytes = bytes;

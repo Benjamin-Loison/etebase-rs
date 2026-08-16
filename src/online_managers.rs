@@ -143,7 +143,7 @@ impl<T> IteratorListResponse<T> {
 }
 
 #[derive(Deserialize)]
-pub(crate) struct LoginChallange {
+pub(crate) struct LoginChallenge {
     #[serde(with = "serde_bytes")]
     pub challenge: Vec<u8>,
     #[serde(with = "serde_bytes")]
@@ -289,7 +289,7 @@ impl<'a> Authenticator<'a> {
         Ok(true)
     }
 
-    pub fn get_login_challenge(&self, username: &str) -> Result<LoginChallange> {
+    pub fn get_login_challenge(&self, username: &str) -> Result<LoginChallenge> {
         #[derive(Serialize)]
         struct Body<'a> {
             username: &'a str,
@@ -303,7 +303,7 @@ impl<'a> Authenticator<'a> {
         res.error_for_status()?;
         let res = res.bytes();
 
-        let ret: LoginChallange = rmp_serde::from_slice(res)?;
+        let ret: LoginChallenge = rmp_serde::from_slice(res)?;
 
         Ok(ret)
     }
@@ -422,7 +422,7 @@ impl<'a> FetchOptions<'a> {
         self
     }
 
-    /// How much data to prefetech
+    /// How much data to prefetch
     pub fn prefetch(mut self, prefetch: &'a PrefetchOption) -> Self {
         self.prefetch = Some(prefetch);
         self
